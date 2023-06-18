@@ -5,24 +5,31 @@ header = data[0]
 students = data[1:]
 # remove last student(empty student)
 students.pop()
+
 total_student = len(students)
 
 header = header.split(",")
 subject = header[5:]
-print(subject)
+
 for i in range(len(students)):
+
 	students[i] = students[i].split(",")
 
 not_take_exam = [0,0,0,0,0,0,0,0,0,0,0]
+
 for s in students:
+
 	for i in range(5,16):
+	
 		if s[i]== "-1":
 			not_take_exam[i-5] +=1 
 # convert to percentage
 for i in range(0,11):
+
 	not_take_exam_percentage[i] = round(not_take_exam[i]*100/total_student, 2)
 
 import matplotlib.pyplot as plt
+
 import numpy 
 
 figure, axis = plt.subplots()
