@@ -63,16 +63,24 @@
 # show the plot
 	plt.show()
 # calculate mean score 
-	import matlotlib.pyplot as plt 
+	import matplotlib.pyplot as plt 
 	import numpy as np 
 
-	x = np.arrange(12)
-	y = np.arrange(12)
+	x = np.arange(12)
+	y = np.arange(12)
 	print(x)
 
 	fig , axis = plt.subplots()
 	plt.bar(x, average)
-	axis.set_ylim(0,100)
-	axis.set_xlabel('Percentage')
+	plt.xticks(x,y)
+	axis.set_ylim(0,10)
+	axis.set_ylabel('Điểm trung bình')
+	rects = axis.patches
 	labels = average
+	for rect, label in zip(rects, average):
+   	 height = rect.get_height()
+    	axis.text(rect.get_x() + rect.get_width() / 2, height + 0, label, ha='center', va='bottom')
+ 
+	plt.title('')
+	plt.show()
  	
