@@ -83,4 +83,5 @@
  
 	plt.title('')
 	plt.show()
- 	
+ ![Figure_2](https://github.com/IamQuangg/Python/assets/128073066/caa27304-1b50-4219-9759-190661382b2a)
+
