@@ -62,3 +62,17 @@
 
 # show the plot
 	plt.show()
+# calculate mean score 
+	import matlotlib.pyplot as plt 
+	import numpy as np 
+
+	x = np.arrange(12)
+	y = np.arrange(12)
+	print(x)
+
+	fig , axis = plt.subplots()
+	plt.bar(x, average)
+	axis.set_ylim(0,100)
+	axis.set_xlabel('Percentage')
+	labels = average
+ 	
