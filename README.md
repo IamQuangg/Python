@@ -1,4 +1,5 @@
-	with open("clean_data.csv", encoding= "utf8") as file:
+# Set up data
+ 	with open("clean_data.csv", encoding= "utf8") as file:
 	data= file.read().split("\n")
 
 	header = data[0]
@@ -84,4 +85,28 @@
 	plt.title('')
 	plt.show()
  ![Figure_2](https://github.com/IamQuangg/Python/assets/128073066/caa27304-1b50-4219-9759-190661382b2a)
-
+ # Điểm trung bình theo độ tuổi 
+	fig , axis = plt.subplots()
+	plt.bar(x, num_of_student_per_age_group)
+	plt.plot(x, average_of_student_per_age_group, color = 'red', marker = 'o')
+	plt.xticks(x,y)
+	axis.set_ylim(0,70000)
+	age_lable =[17,18,19,20,21,22,23,24,25,26,">26"]
+	plt.xticks(x, age_lable)
+	axis.set_ylabel('Số học sinh')
+	axis.set_xlabel('Tuổi')
+	# right side tick
+	axis2 = axis.twinx()
+	axis2.tick_params('y',colors ='red')
+	axis2.set_ylim(0,10)
+	axis2.set_ylabel("Điểm trung bình")
+	
+	rects = axis.patches
+	labels = [2, 66327, 4463, 1396, 767, 384, 300, 223, 177, 109, 296]
+	for rect, label in zip(rects, num_of_student_per_age_group):
+	    height = rect.get_height()
+	    axis.text(rect.get_x() + rect.get_width() / 2, height + 0, label, ha='center', va='bottom')
+	 
+	plt.title('Điểm trung bình theo độ tuổi')
+	plt.show()
+![mean_score](https://github.com/IamQuangg/Python/assets/128073066/dfd3f5a6-90fd-4d3b-814f-de0abbd0129a)
